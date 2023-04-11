@@ -48,7 +48,7 @@ def ExtractContent(url):
 			return raw
 	except Exception as e:
 		print("[error] - " + url)
-		#print(e)
+		print(e)
 		return None
 
 def Md5Encrypt(text):
@@ -244,7 +244,7 @@ def SaveFile(file_content, file_path, utf8=False):
 				fobject.write(file_content)
 	except Exception as e:
 		print("[error] - " + file_path)
-		#print(e)
+		print(e)
 
 def ProcessLink(page_url, link, if_page_url = False):
 	temp = ProcessResourcePath(page_url, link)
@@ -270,7 +270,7 @@ def ProcessLink(page_url, link, if_page_url = False):
 
 def SaveSinglePage(page_url):
 	domain = GetUrlPart(page_url, "domain")
-	domain_path = domain.replace(".", "_")
+	domain_path = domain.replace(".", "_").replace(":", "__")
 	processed_page_url = ProcessLink("http://" + domain, page_url, True)
 	page_save_path = "website/" + domain_path + "/" + GetUrlPart(processed_page_url, "path")
 	if os.path.exists(page_save_path) == True: 
