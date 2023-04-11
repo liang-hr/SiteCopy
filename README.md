@@ -18,7 +18,7 @@ sitecopy is a tool that facilitates personal website backup and network data col
 
 Python版本: 3.7
 
-安装依赖库: `pip3 install -r requirements.txt`
+安装依赖库: `pip3 install -r requirements.txt` 添加指定国内源 ` -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com`
 
 - 复制单个页面
 
